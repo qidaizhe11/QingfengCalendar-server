@@ -14,3 +14,4 @@ CONFIG   -= app_bundle
 
 TEMPLATE = app
 
+include(src/base/base.pri)
