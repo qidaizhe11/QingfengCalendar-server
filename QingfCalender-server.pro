@@ -17,3 +17,4 @@ TEMPLATE = app
 INCLUDEPATH += C:\cygwin64\usr\include
 
 include(src/base/base.pri)
+include(src/login_server/login_server.pri)
