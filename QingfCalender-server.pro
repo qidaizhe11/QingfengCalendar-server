@@ -14,4 +14,6 @@ CONFIG   -= app_bundle
 
 TEMPLATE = app
 
+INCLUDEPATH += C:\cygwin64\usr\include
+
 include(src/base/base.pri)
