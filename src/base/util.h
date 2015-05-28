@@ -1,7 +1,7 @@
 #ifndef __UTIL_H__
 #define __UTIL_H__
 
-#define _CRT_SECURE_NO_DEPRECATE	// remove warning C4996, 
+#define _CRT_SECURE_NO_DEPRECATE	// remove warning C4996,
 
 #include "ostype.h"
 #include "UtilPdu.h"
@@ -10,6 +10,10 @@
 #include <stdlib.h>
 #include <string.h>
 #include "slog/slog_api.h"
+
+#undef _WIN32
+#undef WIN32
+
 #ifndef _WIN32
 #include <strings.h>
 #endif
@@ -29,19 +33,19 @@
 
 #define NOTUSED_ARG(v) ((void)v)		// used this to remove warning C4100, unreferenced parameter
 
-/// yunfan modify end 
+/// yunfan modify end
 class CRefObject
 {
 public:
-	CRefObject();
-	virtual ~CRefObject();
+    CRefObject();
+    virtual ~CRefObject();
 
-	void SetLock(CLock* lock) { m_lock = lock; }
-	void AddRef();
-	void ReleaseRef();
+    void SetLock(CLock* lock) { m_lock = lock; }
+    void AddRef();
+    void ReleaseRef();
 private:
-	int				m_refCount;
-	CLock*	m_lock;
+    int				m_refCount;
+    CLock*	m_lock;
 };
 
 #define LOG_MODULE_IM         "IM"
@@ -65,14 +69,14 @@ void util_sleep(uint32_t millisecond);
 class CStrExplode
 {
 public:
-	CStrExplode(char* str, char seperator);
-	virtual ~CStrExplode();
+    CStrExplode(char* str, char seperator);
+    virtual ~CStrExplode();
 
-	uint32_t GetItemCnt() { return m_item_cnt; }
-	char* GetItem(uint32_t idx) { return m_item_list[idx]; }
+    uint32_t GetItemCnt() { return m_item_cnt; }
+    char* GetItem(uint32_t idx) { return m_item_list[idx]; }
 private:
-	uint32_t	m_item_cnt;
-	char** 		m_item_list;
+    uint32_t	m_item_cnt;
+    char** 		m_item_list;
 };
 
 char* replaceStr(char* pSrc, char oldChar, char newChar);

@@ -1,5 +1,6 @@
 
 INCLUDEPATH += $$PWD/pb/protocol
+INCLUDEPATH += $$PWD/pb
 
 HEADERS += \
     $$PWD/pb/protocol/IM.BaseDefine.pb.h \

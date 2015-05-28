@@ -2,7 +2,8 @@
 #ifndef __OS_TYPE_H__
 #define __OS_TYPE_H__
 
-//#undef _WIN32
+#undef _WIN32
+#undef WIN32
 
 #ifdef _WIN32
     #include <WinSock2.h>
