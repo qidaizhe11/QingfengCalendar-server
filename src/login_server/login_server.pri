@@ -5,6 +5,7 @@ HEADERS += \
     $$PWD/LoginConn.h
 
 SOURCES += \
-    $$PWD/ipparser.cpp
+    $$PWD/ipparser.cpp \
+    $$PWD/LoginConn.cpp
 
 
