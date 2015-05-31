@@ -7,6 +7,8 @@ HEADERS += \
 
 SOURCES += \
     $$PWD/ipparser.cpp \
-    $$PWD/LoginConn.cpp
+    $$PWD/LoginConn.cpp \
+    $$PWD/HttpConn.cpp \
+    $$PWD/login_server.cpp
 
 
