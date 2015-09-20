@@ -2,9 +2,6 @@
 #ifndef __OS_TYPE_H__
 #define __OS_TYPE_H__
 
-#undef _WIN32
-#undef WIN32
-
 #ifdef _WIN32
     #include <WinSock2.h>
     #include <WinBase.h>
@@ -79,20 +76,20 @@ typedef int				net_handle_t;
 typedef int				conn_handle_t;
 
 enum {
-    NETLIB_OK		= 0,
-    NETLIB_ERROR	= -1
+	NETLIB_OK		= 0,
+	NETLIB_ERROR	= -1
 };
 
 #define NETLIB_INVALID_HANDLE	-1
 
 enum
 {
-    NETLIB_MSG_CONNECT = 1,
-    NETLIB_MSG_CONFIRM,
-    NETLIB_MSG_READ,
-    NETLIB_MSG_WRITE,
-    NETLIB_MSG_CLOSE,
-    NETLIB_MSG_TIMER,
+	NETLIB_MSG_CONNECT = 1,
+	NETLIB_MSG_CONFIRM,
+	NETLIB_MSG_READ,
+	NETLIB_MSG_WRITE,
+	NETLIB_MSG_CLOSE,
+	NETLIB_MSG_TIMER,
     NETLIB_MSG_LOOP
 };
 
