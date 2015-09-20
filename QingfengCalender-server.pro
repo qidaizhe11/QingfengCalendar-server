@@ -8,7 +8,7 @@ QT       += core
 
 QT       -= gui
 
-TARGET = QingfCalender-server
+TARGET = QingfengCalender-server
 CONFIG   += console
 CONFIG   -= app_bundle
 
