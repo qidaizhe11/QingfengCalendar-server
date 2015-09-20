@@ -148,7 +148,7 @@ void CHttpConn::OnRead()
 
         int ret = netlib_recv(m_sock_handle, m_in_buf.GetBuffer() + m_in_buf.GetWriteOffset(),
                               READ_BUF_SIZE);
-        if (ret < 0) {
+        if (ret <= 0) {
             break;
         }
 
@@ -218,9 +218,15 @@ void CHttpConn::OnTimer(uint64_t curr_tick)
     }
 }
 
+void CHttpConn::OnWriteComplete()
+{
+    log("write complete");
+    Close();
+}
+
 void CHttpConn::_HandleMsgServRequest(string &url, string &post_data)
 {
-    if (g_msg_serv_info.size() < 0) {
+    if (g_msg_serv_info.size() <= 0) {
         Json::Value value;
         value["code"] = 1;
         value["msg"] = "没有msg_server";
@@ -249,6 +255,7 @@ void CHttpConn::_HandleMsgServRequest(string &url, string &post_data)
 
     if (it_min_conn == g_msg_serv_info.end()) {
         log("All Tcp MsgServer are full ");
+    } else {
         Json::Value value;
         value["code"] = 0;
         value["msg"] = "";

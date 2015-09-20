@@ -102,7 +102,7 @@ void CLoginConn::OnTimer(uint64_t curr_tick)
             Close();
         }
     } else {
-        if (curr_tick > m_last_recv_tick + SERVER_HEARTBEAT_INTERVAL) {
+        if (curr_tick > m_last_send_tick + SERVER_HEARTBEAT_INTERVAL) {
             IM::Other::IMHeartBeat msg;
             CImPdu pdu;
             pdu.SetPBMsg(&msg);
